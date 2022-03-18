@@ -385,7 +385,7 @@ if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button 
 				break
 case 'infobot':
 if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-			reply('Update bot selanjutnya silahkan cek YouTube zeeone ofc')
+			reply('Nanti dibuat kok')
 break
 case 'owner':{
 	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
@@ -650,56 +650,6 @@ case 'spotifysearch':{
         ini_txt += `Preview : ${x.preview_url}\n\n\n`
     }
     reply(ini_txt)}
-    break
-case 'nhentai':{
-	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
-    henid = args[0]
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${lolkey}`)
-    get_result = get_result.result
-    ini_txt = `Title Romaji : ${get_result.title_romaji}\n`
-    ini_txt += `Title Native : ${get_result.title_native}\n`
-    ini_txt += `Read Online : ${get_result.read}\n`
-    get_info = get_result.info
-    ini_txt += `Parodies : ${get_info.parodies}\n`
-    ini_txt += `Character : ${get_info.characters.join(", ")}\n`
-    ini_txt += `Tags : ${get_info.tags.join(", ")}\n`
-    ini_txt += `Artist : ${get_info.artists}\n`
-    ini_txt += `Group : ${get_info.groups}\n`
-    ini_txt += `Languager : ${get_info.languages.join(", ")}\n`
-    ini_txt += `Categories : ${get_info.categories}\n`
-    ini_txt += `Pages : ${get_info.pages}\n`
-    ini_txt += `Uploaded : ${get_info.uploaded}\n`
-    reply(ini_txt)}
-    break
- case 'nhentaipdf':{
- 	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
-    henid = args[0]
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${lolkey}`)
-    get_result = get_result.result
-    ini_buffer = await getBuffer(get_result)
-    await haruka.sendMessage(from, ini_buffer, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${henid}.pdf` })
-    }
-    break
-case 'nhentaisearch':{
-	if (!isHaruka) return sendButMessage(from, lang.noregis(pushname), `Klik Button Untuk Verify`, [{buttonId: '.daftar',buttonText: {displayText: `Daftar`,},type: 1,}], {quoted: fgif});
-    if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
-    query = args.join(" ")
-    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=${lolkey}&query=${query}`)
-    get_result = get_result.result
-    ini_txt = "Result : \n"
-    for (var x of get_result) {
-        ini_txt += `Id : ${x.id}\n`
-        ini_txt += `Title English : ${x.title_english}\n`
-        ini_txt += `Title Japanese : ${x.title_japanese}\n`
-        ini_txt += `Native : ${x.title_native}\n`
-        ini_txt += `Upload : ${x.date_upload}\n`
-        ini_txt += `Page : ${x.page}\n`
-        ini_txt += `Favourite : ${x.favourite}\n\n`
-    }
-    reply(ini_txt)
-    }
     break
 //maker ephoto
 case 'wetglass':case 'multicolor3d':case 'watercolor':case 'luxurygold':case 'galaxywallpaper':case 'lighttext':case 'beautifulflower':case 'puppycute':case 'royaltext':case 'heartshaped':case 'birthdaycake':case 'galaxystyle':case 'hologram3d':case 'greenneon':case 'glossychrome':case 'greenbush':case 'metallogo':case 'noeltext':case 'glittergold':case 'textcake':case 'starsnight':case 'wooden3d':case 'textbyname':case 'writegalacy':case 'galaxybat':case 'snow3d':case 'birthdayday':case 'goldplaybutton':case 'silverplaybutton':case 'freefire':{
